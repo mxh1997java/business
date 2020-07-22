@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.FeignClientsConfiguration;
 import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
-
 import java.net.URI;
 import java.util.Map;
 
@@ -28,6 +27,10 @@ public class TrackingFeignClientHandler {
 
     public Map<String, Object> hello(URI baseUri, String name) throws Exception {
         return trackingFeignClient.hello(baseUri,name);
+    }
+
+    public Map<String, Object> test(URI baseUri) throws Exception {
+        return trackingFeignClient.test(baseUri);
     }
 
 }

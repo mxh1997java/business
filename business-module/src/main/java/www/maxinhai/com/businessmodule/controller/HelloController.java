@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import www.maxinhai.com.businessmodule.feign.TrackingFeignClientHandler;
 import www.maxinhai.com.businessshare.appservice.HelloService;
-
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +29,8 @@ public class HelloController implements HelloService {
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public void test() throws Exception {
-        Map<String, Object> map = trackingFeignClientHandler.hello(new URI("http://127.0.0.1:10001/tracking/hello"), "maxinhai");
+        //Map<String, Object> map = trackingFeignClientHandler.hello(new URI("http://127.0.0.1:10001/tracking/hello"), "maxinhai");
+        Map<String, Object> map = trackingFeignClientHandler.test(new URI("http://127.0.0.1:10001/tracking/test"));
         System.out.println(map.toString());
     }
 
